@@ -11,5 +11,7 @@ The examples require access to codecarbon. To install (see https://mlco2.github.
 `pip install codecarbon` (if you are able/wish to install on a given system)
 `pip install --user codecarbon` (to install as a user)
 
+NB on Debian for Python3 use `pip3` in place of `pip`
+
 
 
