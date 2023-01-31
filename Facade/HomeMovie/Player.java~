@@ -1,0 +1,8 @@
+public class Player{
+    public void on() {
+	System.out.println("Coffee Maker ON");
+    }
+    public void off() {
+	System.out.println("Coffee Maker ON");
+    }
+}
