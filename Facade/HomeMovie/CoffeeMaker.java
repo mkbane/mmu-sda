@@ -6,6 +6,6 @@ public class CoffeeMaker {
 	System.out.println("Coffee Maker OFF");
     }
     public void makeCoffee(String s) {
-	System.out.println("Coffee Maker making a %s coffee");
+	System.out.println("Coffee Maker making a " + s + " coffee");
     }
 }

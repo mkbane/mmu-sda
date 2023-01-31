@@ -7,7 +7,6 @@ public class BlurayCollection {
 	lib.add("Mad Max 2");
 	lib.add("Brazil");
 	lib.add("Men in Black");
-	System.out.println("Bluray collection\n" + lib);
     }
 
     public String select(String s) {
