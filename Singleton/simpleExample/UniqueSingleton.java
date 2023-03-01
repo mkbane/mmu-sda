@@ -1,5 +1,6 @@
 public class UniqueSingleton {
     // global variable 'instance' of type of the class 'UniqueSingleton'
+    // see 'Client' as to why we use static
     private static UniqueSingleton instance;
 
     
@@ -10,7 +11,9 @@ public class UniqueSingleton {
 
     public static UniqueSingleton getInstance() {
 	if (instance == null) {
-	    // there is no current instance so set one up
+	    // there is no current instance, so set one up
+	    // i.e this is where the constructor is called from
+	    // and ONLY here
 	    instance = new UniqueSingleton();
 	}
 	else {

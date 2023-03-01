@@ -12,7 +12,17 @@ public class Client {
         */
 
         System.out.printf("Client will call 'UniqueSingleton' %d times...\n", NUM);
-        for (int i=0; i<NUM; i++) {
+
+	/*
+	 * constructor for US is private so we cannot use
+	 *	    UniqueSingleton US = new UniqueSingleton();
+	 * thus we call US statically, which will require
+	 * getInstance() to be static within US
+	 * (we use a method without instantianting an object first)
+	 *
+	 */
+
+	for (int i=0; i<NUM; i++) {
             UniqueSingleton US = UniqueSingleton.getInstance();
         }
     }
