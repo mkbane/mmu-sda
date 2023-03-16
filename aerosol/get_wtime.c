@@ -4,6 +4,7 @@
  * mkbane (2023)
  * TO DO: update to clock_gettime 
  */
+#include <stddef.h>
 #include <sys/time.h>
 double get_wtime () {
   struct timeval wallTime;
