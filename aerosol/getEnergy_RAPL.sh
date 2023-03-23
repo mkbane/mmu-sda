@@ -21,7 +21,8 @@ start=`cat $ENERGYFILE`
 
 # run command $1 and all its args
 ## NB we redirect standard out and error out to a null file
-$@ > /dev/null 2>&1
+### if dont wnt output: $@ > /dev/null 2>&1
+$@
 
 # save final RAPL counter value
 finish=`cat $ENERGYFILE`
