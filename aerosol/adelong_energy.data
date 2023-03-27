@@ -1,0 +1,15 @@
+d55142816@adelong:~/SDA/mmu-sda/aerosol$ export OMP_NUM_THREADS=6
+ad55142816@adelong:~/SDA/mmu-sda/aerosol$ for k in `seq 1 3`;do ~/bin/getEnergy_RAPL.sh ./a.out 40000 20;done
+Energy consumed: 2448262287 microJoules
+Energy consumed: 2437580186 microJoules
+Energy consumed: 2437857224 microJoules
+ad55142816@adelong:~/SDA/mmu-sda/aerosol$ export OMP_NUM_THREADS=1
+ad55142816@adelong:~/SDA/mmu-sda/aerosol$ for k in `seq 1 3`;do ~/bin/getEnergy_RAPL.sh ./a.out 40000 20;done
+Energy consumed: 6100339241 microJoules
+Energy consumed: 6100120064 microJoules
+Energy consumed: 6147586496 microJoules
+ad55142816@adelong:~/SDA/mmu-sda/aerosol$ export OMP_NUM_THREADS=12
+ad55142816@adelong:~/SDA/mmu-sda/aerosol$ for k in `seq 1 3`;do ~/bin/getEnergy_RAPL.sh ./a.out 40000 20;done
+Energy consumed: 2045627759 microJoules
+Energy consumed: 1988024025 microJoules
+Energy consumed: 2000785649 microJoules
