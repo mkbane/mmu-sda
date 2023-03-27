@@ -1,0 +1,21 @@
+/* 
+ * INVOKER
+ * 
+ */
+
+import java.util.*;
+public class Broker {
+    private List<SalesOrder> salesOrders = new ArrayList<SalesOrder>();
+
+    public void takeOrder(SalesOrder order) {
+	salesOrders.add(order);
+    }
+
+    public void placeOrders() {
+	for (SalesOrder order: salesOrders) {
+	    order.execute(); // polymorphism
+	}
+	salesOrders.clear(); // to prevent repeat orders
+    }
+    
+}

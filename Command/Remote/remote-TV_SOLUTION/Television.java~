@@ -1,0 +1,15 @@
+public class Television {
+    int channel = 0; // default is channel 0
+
+    public Television() {
+	System.out.println("New TV arrives from shop");
+    }
+    
+    public void on() {
+	System.out.println("Television -> ON");
+	System.out.println("Television channel: " + channel);
+    }
+    public void off() {
+	System.out.println("Television -> OFF");
+    }
+}

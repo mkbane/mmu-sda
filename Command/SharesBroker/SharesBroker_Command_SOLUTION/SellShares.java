@@ -1,0 +1,15 @@
+/*
+ * CONCRETE COMMAND
+ *
+ */
+public class SellShares implements SharesOrder {
+    private Shares shares;
+    private int num;
+    public SellShares(Shares s, int num) {
+	this.shares = s;
+	this.num = num;
+    }
+    public void execute() {
+	shares.sellShares(num);
+    }
+}

@@ -1,0 +1,67 @@
+class RunSim {
+    /*
+     * RunSim: main method to test use of FlexiRemoteControl
+     *
+     * FlexiRemoteControl has buttons labelled "on" and and "off"
+     * which can be used to turn on and off different kit, namely
+     * television (tv) and set top box (stp)
+     *
+     */
+
+    public static void main(String[] args) {
+	// handle to remote, tv and stp
+	RemoteControl remote = new RemoteControl();
+	Television tv = new Television();
+
+	/*
+	 * determine which kit to control
+	 * Typically can use a button on remote to toggle which kit, but we will just mimic
+	 * 
+	 * In terms of the Command DP,
+	 *   invoker = remote
+	 *   receiver = tv | stp
+	 * and we have ConcreteCommands for
+	 *   switchOn, switchOff, channelUp, channelDown, setChannel
+	 *
+	 * In this implementation we have put all ConcreteCommands for Television in TelevisionConcreteCommands,java 
+	 *
+	 * we can only interact with the receiver ("tv") 
+	 * by using Command & invoker ("remote")
+	 *
+	 */
+
+	// turn tv on
+	remote.setCommand(new TelevisionOnCommand(tv));
+	remote.action();
+
+	// play with tv channels
+	remote.setCommand(new TelevisionChannelUpCommand(tv));
+	remote.action();
+	remote.action();
+	remote.action();
+
+	remote.setCommand(new TelevisionSetChannelCommand(tv,205));
+	remote.action();
+	
+	remote.setCommand(new TelevisionChannelDownCommand(tv));
+	remote.action();
+	remote.action();
+
+	// we can also set various ConcreteCommands to use directly with remote
+	Command TVdown = new TelevisionChannelDownCommand(tv);
+	Command TVup = new TelevisionChannelUpCommand(tv);
+	Command setFavChannel = new TelevisionSetChannelCommand(tv,107);
+	remote.setCommand(TVdown);
+	remote.action();
+	remote.action();
+	remote.setCommand(TVup);
+	remote.action();
+	remote.setCommand(setFavChannel);
+	remote.action();
+
+	// turn tv off
+	remote.setCommand(new TelevisionOffCommand(tv));
+	remote.action();
+
+    }
+}
