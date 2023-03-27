@@ -1,0 +1,46 @@
+public class HomeMovieFacade {
+    int vol=3; //defaul vol
+    public HomeMovieFacade(CoffeeMaker cm, BlurayCollection movies,
+			   Amplifier a, Screen s, Projector proj, Player player,
+			   String playerFormat) {
+	/*
+	 * boot all key components within constructor
+	 */
+
+	cm.on();                     // turn on coffee maker
+	a.on();                      // turn on amplifier
+	a.setVolume(vol);           // turn volume to default
+	s.lower();            // lower the screen
+	proj.on();                 // turn on projector
+	player.on();
+	player.setFormat(playerFormat);
+    }
+
+
+    public void watch(String m) {
+	// watch the nearest match
+	player.play(movies.select(m));
+    }
+
+    public void getCoffee(String coffeeType) {
+	cm.makeCoffee(coffeeType);
+    }
+
+
+    public int getVolume() {
+	return vol;
+    }
+
+    public void setVolume(int v) {
+	this.vol = v;
+	a.setVolume(this.vol);
+    }
+	    
+    public void shutdown() {
+	player.eject();
+	player.off();
+	proj.off();
+	s.raise();
+	a.off();
+    }
+}
